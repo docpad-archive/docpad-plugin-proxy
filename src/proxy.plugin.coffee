@@ -3,6 +3,7 @@ module.exports = (BasePlugin) ->
 
   request = require('request')
   urlUtil = require('url')
+  querystring = require('querystring')
   _ = require('underscore')
 
   class ProxyPlugin extends BasePlugin
@@ -29,7 +30,7 @@ module.exports = (BasePlugin) ->
           options.headers.host = proxyUrl.host
 
           unless _.isEmpty(req.body)
-            options.body = JSON.stringify(req.body)
+            options.body = querystring.stringify(req.body)
 
           request(options).pipe(res)
 
