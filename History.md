@@ -1,5 +1,10 @@
 # History
 
+- v2.1.1 March 7, 2013
+	- Repackaged
+	- Dependency upgrades
+		-  `underscore` ~1.4.3 to `lodash` ~1.0.1
+
 - v2.1.0 January 19, 2013
 	- Fixed POST request with body
 		- Closes [pull request #1](https://github.com/docpad/docpad-plugin-proxy/pull/1) thanks to [Anton Poleshchuk](https://github.com/apoleshchuk)

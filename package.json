@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-proxy",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Proxy service plugin for docpad",
 	"homepage": "http://docpad.org/plugin/proxy",
 	"keywords": [
@@ -12,11 +12,11 @@
 	"author": "Nick Crohn <nick@meltmedia.com>",
 	"maintainers": [
 		"Nick Crohn <nick@meltmedia.com>",
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
 	],
 	"contributors": [
 		"Nick Crohn <nick@meltmedia.com>",
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
 		"Anton Poleshchuk (https://github.com/apoleshchuk)"
 	],
 	"bugs": {
@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"request": "~2.12.0",
-		"underscore": "~1.4.3"
+		"lodash": "~1.0.1"
 	},
 	"devDependencies": {
 		"coffee-script": "~1.4.0"
