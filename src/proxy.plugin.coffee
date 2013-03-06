@@ -1,11 +1,12 @@
 # Export Plugin
 module.exports = (BasePlugin) ->
-
+	# Import
 	request = require('request')
 	urlUtil = require('url')
 	querystring = require('querystring')
-	_ = require('underscore')
+	_ = require('lodash')
 
+	# Plugin
 	class ProxyPlugin extends BasePlugin
 
 		name: 'proxy'
