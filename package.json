@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-proxy",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Proxy service plugin for docpad",
 	"homepage": "http://docpad.org/plugin/proxy",
 	"keywords": [
@@ -31,7 +31,7 @@
 		"docpad": "6.x"
 	},
 	"dependencies": {
-		"request": "~2.12.0",
+		"request": "~2.16.2",
 		"lodash": "~1.0.1"
 	},
 	"devDependencies": {
