@@ -31,10 +31,10 @@ module.exports = (BasePlugin) ->
 					options.headers.host = proxyUrl.host
 
 					unless _.isEmpty(req.body)
-					    if req.headers['content-type'] and (req.headers['content-type'].split ";")[0] is 'application/json'
-                            options.body = JSON.stringify req.body
-                        else 
-                            options.body = querystring.stringify req.body
+						if req.headers['content-type'] and (req.headers['content-type'].split ";")[0] is 'application/json'
+							options.body = JSON.stringify req.body
+						else
+							options.body = querystring.stringify req.body
 
 					request(options).pipe(res)
 
