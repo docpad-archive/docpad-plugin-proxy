@@ -21,7 +21,7 @@ module.exports = (BasePlugin) ->
 
 					proxyUrl = urlUtil.parse(value.domain)
 					proxyUrl.path = proxyUrl.pathname = req.url
-					newUrl = urlUtil.format(proxyUrl)
+					newUrl = decodeURIComponent(urlUtil.format(proxyUrl))
 
 					options =
 						url: newUrl
