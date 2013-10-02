@@ -1,38 +1,24 @@
 # Export Plugin
 module.exports = (BasePlugin) ->
 	# Import
-	request = require('request')
+	proxyMiddleware = require('proxy-middleware')
 	urlUtil = require('url')
-	querystring = require('querystring')
-	_ = require('lodash')
 
-	# Plugin
+	# Define Plugin
 	class ProxyPlugin extends BasePlugin
-
+		# Plugin name
 		name: 'proxy'
 
-		serverAfter: (opts) ->
-			{server} = opts
-			proxy = @
-			proxy.config.proxies or= {}
+		# Add our proxies
+		serverExtend: (opts) ->
+			# Prepare
+			docpad = @docpad
+			proxies = @getConfig().proxies or {}
 
-			for key, value of proxy.config.proxies
-				server.all value.path, (req, res) ->
+			# Add the proxies
+			for own key, value of proxies
+				docpad.log 'info', "Setting up proxy from #{key} to #{value}"
+				opts.serverExpress.use key, proxyMiddleware(urlUtil.parse(value))
 
-					proxyUrl = urlUtil.parse(value.domain)
-					proxyUrl.path = proxyUrl.pathname = req.url
-					newUrl = urlUtil.format(proxyUrl)
-
-					options =
-						url: newUrl
-						method: req.method
-						headers: req.headers
-
-					options.headers.host = proxyUrl.host
-
-					unless _.isEmpty(req.body)
-						options.body = querystring.stringify(req.body)
-
-					request(options).pipe(res)
-
-
+			# Complete
+			return true

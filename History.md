@@ -1,5 +1,9 @@
 # History
 
+- v2.2.0 October 2, 2013
+	- Rewrote
+	- Dependency upgrades
+
 - v2.1.3 April 25, 2013
 	- Dependency upgrades
 
